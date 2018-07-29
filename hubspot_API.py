@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 
 ## Connecting to the postgress server on local host
 try:
-    conn = psycopg2.connect("dbname=postgres user=postgres host=localhost password=test")
+    conn = psycopg2.connect("dbname=postgres user=postgres host=localhost password=****")
     cur = conn.cursor()
     print('Connection to Postgress Completed')
 except:
@@ -72,11 +72,6 @@ def insert_data():
 insert_data()
 
 
-
-
-
-
-
 def graph_data():
     cur.execute('alter table alooma.engagement alter column createdate type bigint using (createdate::bigint)');
     cur.execute('''select to_char(to_timestamp(createdate/1000),'YYYY-MM-DD') AS ENGAGMENT_DATE
@@ -101,13 +96,9 @@ def graph_data():
             yaxis2.append(rows[2])
 
         
-            
-            
     plt.bar(xaxis1,yaxis1,label = 'NOTE',color = 'r')
     plt.bar(xaxis2,yaxis2,label = 'TASK',color = 'g')
 
-    
-    
     
     plt.xlabel('date')
     plt.ylabel('count')
