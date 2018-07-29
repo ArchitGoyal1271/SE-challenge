@@ -1,6 +1,7 @@
 # SE-challenge
 
 Task
+
 The task is to demonstrate the capability to connect to hubspot api and fetch all the
 engagements. Each API call extracts 250 records (max limit).Offset elements is used
 to page through results. 
