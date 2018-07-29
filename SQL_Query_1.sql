@@ -1,4 +1,9 @@
+'''
+Engagement table was converted into bigint datatype to apply timestamp function'''
+
+
 alter table alooma.engagement alter column createdate type bigint using (createdate::bigint);
+
 
 select to_char(to_timestamp(createdate/1000),'YYYY-MM-DD') AS ENGAGMENT_DATE
     ,ETYPE
